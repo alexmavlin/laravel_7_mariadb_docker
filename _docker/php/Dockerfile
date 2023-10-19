@@ -32,11 +32,3 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 COPY ./html /var/www/html
 # Set the working directory
 WORKDIR /var/www/html
-
-RUN composer update && \
-    chmod -R 777 . && \
-    php artisan key:generate && \
-    php artisan config:clear && \
-    php artisan route:clear && \
-    php artisan ui:auth && \
-    npm install
