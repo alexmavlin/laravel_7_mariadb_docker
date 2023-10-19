@@ -34,10 +34,10 @@ COPY ./html /var/www/html
 WORKDIR /var/www/html
 
 RUN composer update && \
-    php artisan key:generate && \
-    php artisan ui:auth && \
-    php artisan migrate && \
     chmod -R 777 . && \
+    php artisan key:generate && \
     php artisan config:clear && \
     php artisan route:clear && \
+    php artisan ui:auth && \
+    php artisan migrate && \
     npm istall
