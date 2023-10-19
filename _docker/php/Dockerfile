@@ -39,4 +39,4 @@ RUN composer update && \
     php artisan config:clear && \
     php artisan route:clear && \
     php artisan ui:auth && \
-    npm istall
+    npm install
