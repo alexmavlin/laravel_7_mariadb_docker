@@ -11,16 +11,6 @@ services:
     container_name: nginx
     depends_on:
       - php
-
-  php:
-    build: 
-      context: .
-      dockerfile: _docker/php/Dockerfile
-    volumes:
-      - ./:/var/www/
-    depends_on:
-      - mariadb
-    container_name: php
   
   mariadb:
     image: mariadb:10.5.18
@@ -43,4 +33,14 @@ services:
     environment:
       - PMA_ARBITRARY=1
     container_name: phpmyadmin
+
+  php:
+    build: 
+      context: .
+      dockerfile: _docker/php/Dockerfile
+    volumes:
+      - ./:/var/www/
+    depends_on:
+      - mariadb
+    container_name: php
     
