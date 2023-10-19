@@ -29,6 +29,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
     --filename=composer \
     --install-dir=/usr/local/bin
 
+COPY ./html /var/www/html
 # Set the working directory
 WORKDIR /var/www/html
 
